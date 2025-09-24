@@ -1,0 +1,25 @@
+package main
+
+import (
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+)
+
+func main() {
+	// 创建 Gin 路由器
+	router := gin.Default()
+
+	// GET 路由
+	router.GET("/", func(c *gin.Context) {
+		c.String(http.StatusOK, "hello cakepanit.com")
+	})
+
+	// POST 路由
+	router.POST("/", func(c *gin.Context) {
+		c.String(http.StatusOK, "hello cakepanit.com")
+	})
+
+	// 启动服务器，默认端口 8080
+	router.Run(":80")
+}
